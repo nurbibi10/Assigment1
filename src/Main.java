@@ -12,4 +12,15 @@ import java.util.Scanner;
             System.out.println("The longest side: " + shape.getLongestSide());
             System.out.println("The average side: " + shape.getAvgSide());
         }
-
+        public static Shape readShapeFromFile(File file) throws FileNotFoundException {
+            Scanner sc = new Scanner(file);
+            Shape shape = new Shape();
+            while (sc.hasNext()) {
+                double x = sc.nextDouble();
+                double y = sc.nextDouble();
+                Point point = new Point(x, y);
+                shape.addPoint(point);
+            }
+            return shape;
+        }
+    }
