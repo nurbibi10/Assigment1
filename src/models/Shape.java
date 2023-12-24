@@ -16,4 +16,14 @@ public class Shape {
         points.add(point);
     }
 
+    public double calculatePerimeter() {
+        double perimeter = 0;
+        int len = points.size();
+        for (int i = 0; i < len - 1; i++) {
+            perimeter += points.get(i).distance(points.get(i + 1));
+        }
+        perimeter += points.get(len - 1).distance(points.get(0));
+        return perimeter;
+    }
+
 }
